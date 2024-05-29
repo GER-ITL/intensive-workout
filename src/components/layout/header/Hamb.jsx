@@ -1,4 +1,4 @@
-import { AlignJustify, DoorClosed } from 'lucide-react'
+import { DoorClosed, MenuIcon } from 'lucide-react'
 import React from 'react'
 import styles from './Hamb.module.scss'
 import Menu from './Menu'
@@ -12,7 +12,7 @@ const Hamb = ({ isShow, setIsShow }) => {
 					</button>
 				) : (
 					<button>
-						<AlignJustify />
+						<MenuIcon />
 					</button>
 				)}
 			</button>

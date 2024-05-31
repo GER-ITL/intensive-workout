@@ -1,18 +1,27 @@
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, User } from 'lucide-react'
 import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside'
 import Hamb from './Hamb'
 import styles from './Header.module.scss'
-const Header = ({ backLink }) => {
+const Header = ({ backLink = '/' }) => {
 	const { isAuth } = useAuth()
 	const { isShow, setIsShow, ref } = useOnClickOutside(false)
+
+	const { pathname } = useLocation()
+	const navigate = useNavigate()
 	return (
 		<header className={styles.header} ref={ref}>
-			<button>
-				<ArrowLeft />
-				{/* <User /> */}
-			</button>
+			{pathname !== '/' ? (
+				<button>
+					<ArrowLeft onClick={() => navigate(backLink)} />
+				</button>
+			) : (
+				<button>
+					<User onClick={() => navigate('/profile')} />
+				</button>
+			)}
 			<button>
 				<Hamb isShow={isShow} setIsShow={setIsShow} />
 			</button>

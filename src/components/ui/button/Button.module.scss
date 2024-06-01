@@ -3,6 +3,7 @@
 .button {
 	border: none;
 	outline: none;
+	font-family: $default-font;
 	font-size: 18px;
 	border-radius: 10px;
 	padding: 13px 48px;
@@ -10,6 +11,7 @@
 	background-color: rgba($accent, 0.4);
 	cursor: pointer;
 	color: #fff;
+
 	@media (max-width: $mobile) {
 		font-size: 16px;
 		padding: 12px 38px;

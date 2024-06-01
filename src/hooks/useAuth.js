@@ -1,5 +1,5 @@
-export const useAuth = initial => {
+export const useAuth = () => {
 	return {
-		isAuth: initial,
+		isAuth: true,
 	}
 }

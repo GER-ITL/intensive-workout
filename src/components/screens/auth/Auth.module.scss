@@ -1,0 +1,26 @@
+@import '../../../assets/styles/variables';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	& input {
+		margin: 10px;
+		padding: 10px 30px;
+		background-color: $accent;
+		color: $white;
+		font-family: $default-font;
+		border: none;
+		outline: none;
+		border-radius: 5px;
+		transition: box-shadow 0.4s ease;
+		&:focus {
+			box-shadow: 0 0 5px #e6e6fa;
+		}
+	}
+}
+h1 {
+	font-size: 40px;
+}

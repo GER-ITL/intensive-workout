@@ -7,8 +7,8 @@
 	align-items: center;
 	min-height: 100vh;
 	& input {
-		margin: 10px;
-		padding: 10px 30px;
+		padding: 10px 40px;
+		margin-bottom: 10px;
 		background-color: $accent;
 		color: $white;
 		font-family: $default-font;
@@ -22,5 +22,32 @@
 	}
 }
 h1 {
-	font-size: 40px;
+	font-size: 30px;
+}
+
+span {
+	color: #8b2d3d;
+	text-shadow: 0 0 20px #e6e6fa;
+	font-weight: bold;
+}
+
+.wrapperBtn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	> div {
+		width: 48%;
+		button {
+			width: 100%;
+		}
+	}
+	& :last-child > button {
+		background-color: #20366b;
+
+		& :hover {
+			background-color: #29478c;
+			opacity: 1;
+		}
+	}
 }

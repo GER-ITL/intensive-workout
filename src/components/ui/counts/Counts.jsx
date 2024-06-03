@@ -6,7 +6,7 @@ const Counts = () => {
 		<div className={styles.wrapper}>
 			{counts.map(count => {
 				return (
-					<div>
+					<div key={count.title}>
 						<h5>{count.title}</h5>
 						<p>{count.value}</p>
 					</div>

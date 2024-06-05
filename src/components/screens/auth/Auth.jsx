@@ -14,6 +14,7 @@ const Auth = ({ isAuth }) => {
 	} = useForm({
 		mode: 'onChange',
 	})
+
 	return (
 		<Layout bgImage='/images/auth-bg.png'>
 			<form
@@ -27,7 +28,7 @@ const Auth = ({ isAuth }) => {
 						required: 'Email is required',
 					})}
 					type='email'
-					placeholder='email'
+					placeholder='email...'
 				/>
 				{errors?.email && <span>Email field is required</span>}
 				<input
@@ -35,13 +36,12 @@ const Auth = ({ isAuth }) => {
 						required: 'Password is required',
 					})}
 					type='password'
-					placeholder='password'
+					placeholder='password...'
 				/>
 				{errors?.password && <span>Password field is required</span>}
-
 				<div className={styles.wrapperBtn}>
-					<Button clickHandler={() => setType('auth')}>SignIn </Button>
-					<Button clickHandler={() => setType('reg')}>Register </Button>
+					<Button clickHandler={() => setType('auth')}>SignIn</Button>
+					<Button clickHandler={() => setType('reg')}>Register</Button>
 				</div>
 			</form>
 		</Layout>

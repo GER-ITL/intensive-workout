@@ -26,9 +26,10 @@ h1 {
 }
 
 span {
-	color: #8b2d3d;
-	text-shadow: 0 0 20px #e6e6fa;
+	color: $red;
+	text-shadow: 0 0 10px #e6e6fa;
 	font-weight: bold;
+	font-size: 15px;
 }
 
 .wrapperBtn {

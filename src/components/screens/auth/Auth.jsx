@@ -1,12 +1,15 @@
+import { useMutation } from '@tanstack/react-query'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import AuthService from '../../../services/auth.service'
 import Layout from '../../layout/Layout'
+import Loader from '../../ui/Loader'
 import Button from '../../ui/button/Button'
 import styles from './Auth.module.scss'
 const Auth = ({ isAuth }) => {
 	const navigate = useNavigate()
-	const [type, setType] = useState('auth')
+	const [type, setType] = useState('login')
 	const {
 		register,
 		handleSubmit,
@@ -14,15 +17,26 @@ const Auth = ({ isAuth }) => {
 	} = useForm({
 		mode: 'onChange',
 	})
+	const { mutate, isLoading } = useMutation(
+		['auth'],
+		({ email, password }) => AuthService.main(email, password, type),
+		{
+			onSuccess: data => {
+				alert('success')
+			},
+		}
+	)
+
+	const onSubmit = data => {
+		console.log(data)
+		mutate(data)
+	}
 
 	return (
 		<Layout bgImage='/images/auth-bg.png'>
-			<form
-				onSubmit={handleSubmit(data => console.log(data))}
-				className={styles.wrapper}
-			>
+			<form onSubmit={handleSubmit(onSubmit)} className={styles.wrapper}>
 				<h1>AUTH || REGISTER</h1>
-				{/* <Loader /> */}
+				{isLoading && <Loader />}
 				<input
 					{...register('email', {
 						required: 'Email is required',
@@ -40,7 +54,7 @@ const Auth = ({ isAuth }) => {
 				/>
 				{errors?.password && <span>Password field is required</span>}
 				<div className={styles.wrapperBtn}>
-					<Button clickHandler={() => setType('auth')}>SignIn</Button>
+					<Button clickHandler={() => setType('login')}>SignIn</Button>
 					<Button clickHandler={() => setType('reg')}>Register</Button>
 				</div>
 			</form>

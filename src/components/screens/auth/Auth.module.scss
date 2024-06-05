@@ -30,6 +30,7 @@ span {
 	text-shadow: 0 0 10px #e6e6fa;
 	font-weight: bold;
 	font-size: 15px;
+	margin: 0 0 10px 0;
 }
 
 .wrapperBtn {
@@ -50,5 +51,11 @@ span {
 			background-color: #29478c;
 			opacity: 1;
 		}
+	}
+}
+.wrapperBtn :last-child {
+	& button:hover {
+		background-color: #29478c;
+		opacity: 1;
 	}
 }

@@ -4,10 +4,9 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import AuthService from '../../../services/auth.service'
 import Layout from '../../layout/Layout'
-import Loader from '../../ui/Loader'
 import Button from '../../ui/button/Button'
 import styles from './Auth.module.scss'
-const Auth = ({ isAuth }) => {
+const Auth = () => {
 	const navigate = useNavigate()
 	const [type, setType] = useState('login')
 	const {
@@ -17,26 +16,26 @@ const Auth = ({ isAuth }) => {
 	} = useForm({
 		mode: 'onChange',
 	})
-	const { mutate, isLoading } = useMutation(
-		['auth'],
-		({ email, password }) => AuthService.main(email, password, type),
-		{
-			onSuccess: data => {
-				alert('success')
-			},
-		}
-	)
+	const { mutate, isPending } = useMutation({
+		queryKey: ['auth'],
+		queryFn: ({ email, password }) => AuthService.main(email, password, type),
+		onSuccess(data) {
+			console.log(data)
+		},
+	})
 
 	const onSubmit = data => {
 		console.log(data)
-		mutate(data)
+		mutate(data, {
+			isPending,
+		})
 	}
 
 	return (
 		<Layout bgImage='/images/auth-bg.png'>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.wrapper}>
 				<h1>AUTH || REGISTER</h1>
-				{isLoading && <Loader />}
+				{/* {isLoading && <Loader />} */}
 				<input
 					{...register('email', {
 						required: 'Email is required',

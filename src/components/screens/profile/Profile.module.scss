@@ -1,0 +1,32 @@
+.images {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
+	> div {
+		margin: 0 auto;
+		h3 {
+			text-align: center;
+			margin-bottom: 0;
+		}
+	}
+}
+img {
+	width: 200px;
+	height: auto;
+	border-radius: 10px;
+}
+
+.wrapperUser {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	h2 {
+		margin: 0;
+	}
+}
+.user {
+	width: 20%;
+	height: auto;
+}

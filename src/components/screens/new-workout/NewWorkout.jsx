@@ -1,8 +1,11 @@
 import React from 'react'
-import Layout from '../../layout/Layout'
 
 const NewWorkout = () => {
-	return <Layout>NewWorkout</Layout>
+	return (
+		<div>
+			<h1>New Workout</h1>
+		</div>
+	)
 }
 
 export default NewWorkout

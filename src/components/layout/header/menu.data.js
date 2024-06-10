@@ -16,6 +16,10 @@ export const menu = [
 		link: '/new-workout',
 	},
 	{
+		title: 'New Exercise',
+		link: '/new-exercise',
+	},
+	{
 		title: 'Profile',
 		link: '/profile',
 	},

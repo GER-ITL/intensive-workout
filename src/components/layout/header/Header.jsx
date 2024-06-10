@@ -18,7 +18,7 @@ const Header = ({ backLink = '/' }) => {
 					<ArrowLeft onClick={() => navigate(backLink)} />
 				</button>
 			) : (
-				<button onClick={() => navigate(isAuth ? '/profile' : '/auth')}>
+				<button onClick={() => navigate(isAuth ? '/auth' : '/profile')}>
 					<User />
 				</button>
 			)}

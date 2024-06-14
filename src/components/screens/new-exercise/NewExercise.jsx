@@ -6,7 +6,10 @@ import styles from '../auth/Auth.module.scss'
 const NewExercise = () => {
 	const { register, onSubmit, handleSubmit } = useNewExercise()
 	return (
-		<Layout bgImage='/public/images/new-exercise-bg.jpg'>
+		<Layout
+			backLink='/new-workout'
+			bgImage='/public/images/new-exercise-bg.jpg'
+		>
 			<form className={styles.wrapper} onSubmit={handleSubmit(onSubmit)}>
 				<h1>Create New Exercise</h1>
 				<input {...register('name')} placeholder='name...' type='text' />

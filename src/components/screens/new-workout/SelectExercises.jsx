@@ -3,7 +3,6 @@ import ReactSelect from 'react-select'
 import useListExercises from '../../../hooks/useListExercises'
 const SelectExercises = ({ control }) => {
 	const { data = [] } = useListExercises()
-	console.log(data)
 	return (
 		<Controller
 			name='exerciseIds'

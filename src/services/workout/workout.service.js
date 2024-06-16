@@ -1,4 +1,4 @@
-import { $axios } from '../api/api'
+import { $axios } from '../../api/api'
 
 const WORKOUTS = '/workouts'
 

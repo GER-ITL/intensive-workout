@@ -9,9 +9,9 @@ const NewExercise = () => {
 		<Layout
 			backLink='/new-workout'
 			bgImage='/public/images/new-exercise-bg.jpg'
+			heading='Create New Exercise'
 		>
 			<form className={styles.wrapper} onSubmit={handleSubmit(onSubmit)}>
-				<h1>Create New Exercise</h1>
 				<input {...register('name')} placeholder='name...' type='text' />
 				<input
 					{...register('times', {

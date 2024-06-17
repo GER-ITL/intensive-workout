@@ -19,8 +19,10 @@
 		font-size: 14px;
 		box-shadow: $bx-16;
 		border-radius: 10px 0 10px 10px;
-		min-width: 116px;
+		min-width: 135px;
 		display: none;
+		text-decoration: none;
+
 		animation: opacity 0.4s;
 		&.show {
 			display: block;
@@ -28,11 +30,7 @@
 		> ul {
 			list-style: none;
 
-			a {
-				color: #000;
-				text-decoration: none;
-				transition: color 0.2s ease;
-
+			li {
 				& :hover,
 				&.active {
 					color: $accent;
@@ -47,6 +45,15 @@
 			transition: color 0.2s ease;
 			font-family: $default-font;
 			padding-bottom: 10px;
+			> a {
+				font-size: 14px;
+				color: #000;
+				text-decoration: none;
+				transition: color 0.2s ease;
+			}
+			> a:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -54,4 +61,7 @@
 	color: #000;
 	padding: 10px 15px;
 	font-family: $default-font;
+}
+.logout:hover {
+	transform: scale(1.2);
 }

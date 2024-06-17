@@ -1,6 +1,10 @@
 export const menu = [
 	{
-		title: 'Main',
+		title: 'Profile',
+		link: '/profile',
+	},
+	{
+		title: 'Home',
 		link: '/',
 	},
 	{
@@ -8,19 +12,11 @@ export const menu = [
 		link: '/workouts',
 	},
 	{
-		title: 'Auth',
-		link: '/auth',
-	},
-	{
-		title: 'Create new',
+		title: 'New Workout',
 		link: '/new-workout',
 	},
 	{
 		title: 'New Exercise',
 		link: '/new-exercise',
-	},
-	{
-		title: 'Profile',
-		link: '/profile',
 	},
 ]

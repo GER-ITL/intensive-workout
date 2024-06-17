@@ -8,9 +8,8 @@ const Auth = () => {
 	const { errors, onSubmit, isLoading, register, setType, handleSubmit } =
 		useAuthPage()
 	return (
-		<Layout bgImage='/images/auth-bg.png'>
+		<Layout bgImage='/images/auth-bg.png' heading='AUTH || REGISTER'>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.wrapper}>
-				<h1>AUTH || REGISTER</h1>
 				{isLoading && <Loader />}
 				<input
 					{...register('email', {

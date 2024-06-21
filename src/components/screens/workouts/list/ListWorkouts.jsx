@@ -18,8 +18,6 @@ const ListWorkouts = () => {
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
-				{error && <Alert type='error' text={error} />}
-				{isSuccessMutate && <Alert text='Workout log created' />}
 				{isLoading && <Loader />}
 				{isSuccess && (
 					<div className={styles.wrapper}>

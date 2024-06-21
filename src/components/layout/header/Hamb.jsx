@@ -5,7 +5,7 @@ import Menu from './Menu'
 const Hamb = ({ isShow, setIsShow }) => {
 	return (
 		<div className={styles.wrapper}>
-			<button onClick={() => setIsShow(!isShow)}>
+			<button aria-label='Open menu' onClick={() => setIsShow(!isShow)}>
 				{isShow ? (
 					<button>
 						<DoorClosed />

@@ -14,11 +14,14 @@ const Header = ({ backLink = '/' }) => {
 	return (
 		<header className={styles.header} ref={ref}>
 			{pathname !== '/' ? (
-				<button>
+				<button aria-label='Go back'>
 					<ArrowLeft onClick={() => navigate(backLink)} />
 				</button>
 			) : (
-				<button onClick={() => navigate(isAuth ? '/auth' : '/profile')}>
+				<button
+					aria-label='Go to profile'
+					onClick={() => navigate(isAuth ? '/auth' : '/profile')}
+				>
 					<User />
 				</button>
 			)}

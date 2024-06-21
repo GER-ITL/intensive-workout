@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 
 // import ExerciseLogService from '../../../../services/exercise/exercise-log.service'
 
+import { useUpdateLogTime } from './useUpdateLogTime'
+
 export const useExerciseLog = () => {
 	const { id } = useParams()
 

@@ -47,7 +47,9 @@ const ExerciseLog = () => {
 					</div>
 				)}
 
-				{isSuccess && exerciseLog?.times?.length === 0 && <div>Not Found</div>}
+				{isSuccess && exerciseLog?.times?.length === 0 && (
+					<div>Times Not Found</div>
+				)}
 			</div>
 		</>
 	)

@@ -9,7 +9,7 @@ const Profile = () => {
 			<Layout bgImage='/public/images/profile-bg.jpg'>
 				<div className={styles.wrapperUser}>
 					<User className={styles.user} />
-					<h2>Max</h2>
+					<h2>Daniel</h2>
 				</div>
 				<Counts />
 				<div className={styles.images}>
